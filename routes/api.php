@@ -32,6 +32,8 @@ Route::get('/hello', function() {
     return "Hello world";
 });
 
+Route::resource('issues', IssueController::class);
+
 Route::group(['middleware' => ['auth:sanctum']], function () {
     //auth
     Route::post('/logout', [UserController::class, 'logout']);
@@ -39,7 +41,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     
     //issue
     // Route::post('/issues', [IssueController::class, 'store'])->name("issues.store");
-    Route::resource('issues', IssueController::class);
+    
     
     //bids route
     Route::resource('bids', BidController::class);
