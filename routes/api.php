@@ -39,9 +39,9 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('/logout', [UserController::class, 'logout']);
     Route::get('/issues', [IssueController::class, 'index']);
 
-    Route::get('/pendingIssues', [IssueControllerBack::class, 'pendingIssues']);
-    Route::get('/runningIssues', [IssueControllerBack::class, 'runningIssues']);
-    Route::get('/doneIssues', [IssueControllerBack::class, 'doneIssues']);
+    Route::get('/pendingIssues', [IssueController::class, 'pendingIssues']);
+    Route::get('/runningIssues', [IssueController::class, 'runningIssues']);
+    Route::get('/doneIssues', [IssueController::class, 'doneIssues']);
     
     //issue
     // Route::post('/issues', [IssueController::class, 'store'])->name("issues.store");
