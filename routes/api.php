@@ -42,6 +42,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('/pendingIssues', [IssueController::class, 'pendingIssues']);
     Route::get('/runningIssues', [IssueController::class, 'runningIssues']);
     Route::get('/doneIssues', [IssueController::class, 'doneIssues']);
+    Route::get('/myUpload/{user_id}', [IssueController::class, 'myUpload']);
     
     //issue
     // Route::post('/issues', [IssueController::class, 'store'])->name("issues.store");

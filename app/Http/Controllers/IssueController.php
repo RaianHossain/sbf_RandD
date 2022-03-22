@@ -71,4 +71,8 @@ class IssueController extends Controller
         $issues = Issue::where('status', 'done')->get();
         return $issues;
     }
+
+    public function myUpload($id){
+        return $id;
+    }
 }
