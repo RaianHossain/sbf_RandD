@@ -54,4 +54,21 @@ class IssueController extends Controller
         $issue->update($request->all());
         return $issue;
     }
+
+    public function pendingIssues(){
+        $issues = Issue::where('status', 'pending')->get();
+        return $issues;
+    }
+
+    public function runningIssues()
+    {
+        $issues = Issue::where('status', 'running')->get();
+        return $issues;
+    }
+
+    public function doneIssues()
+    {
+        $issues = Issue::where('status', 'done')->get();
+        return $issues;
+    }
 }
