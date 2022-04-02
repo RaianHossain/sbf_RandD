@@ -47,6 +47,9 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     //issue
     // Route::post('/issues', [IssueController::class, 'store'])->name("issues.store");
     
+    //users informatino
+    Route::get('/users/show/{id}', [UserController::class, 'show']);
+    
     
     //bids route
     Route::resource('bids', BidController::class);

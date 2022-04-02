@@ -65,4 +65,9 @@ class UserController extends Controller
             'message' => 'Logged out'
         ];
     }
+
+    public function show($id) {
+        $user = User::find($id);
+        return $user;
+    }
 }
