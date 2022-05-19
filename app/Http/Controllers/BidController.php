@@ -19,84 +19,85 @@ class BidController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'issue_id'=> 'required',
-            'user_id'=> 'required',
-            'timeToFix'=> 'required|numeric',
-            'sendBackDate' => 'required',
-            'needSupport'=> 'required',
-            'needSpare'=> 'required',
-            'possibleCost'=> 'required',
-            'haveExistingTask'=> 'required'
-        ]);
+    //     $request->validate([
+    //         'issue_id'=> 'required',
+    //         'user_id'=> 'required',
+    //         'timeToFix'=> 'required|numeric',
+    //         'sendBackDate' => 'required',
+    //         'needSupport'=> 'required',
+    //         'needSpare'=> 'required',
+    //         'possibleCost'=> 'required',
+    //         'haveExistingTask'=> 'required'
+    //     ]);
 
-        // $firstWinner = Bid::where('issue_id', '=', $request->issue_id)->get()->max('score');
-        // return $firstWinner;
-        // dd("hello");
+    //     // $firstWinner = Bid::where('issue_id', '=', $request->issue_id)->get()->max('score');
+    //     // return $firstWinner;
+    //     // dd("hello");
 
-        $newBid =  Bid::create([
-            'issue_id' => $request->issue_id,
-            'user_id' => $request->user_id,
-            'timeToFix' => $request->timeToFix,
-            'sendBackDate' => $request->sendBackDate,
-            'needSupport' => $request->needSupport,
-            'needSpare' => $request->needSpare,
-            'possibleCost' => $request->possibleCost,
-            'haveExistingTask' => $request->haveExistingTask,
-            'score' => 30,
-        ]);
+    //     $newBid =  Bid::create([
+    //         'issue_id' => $request->issue_id,
+    //         'user_id' => $request->user_id,
+    //         'timeToFix' => $request->timeToFix,
+    //         'sendBackDate' => $request->sendBackDate,
+    //         'needSupport' => $request->needSupport,
+    //         'needSpare' => $request->needSpare,
+    //         'possibleCost' => $request->possibleCost,
+    //         'haveExistingTask' => $request->haveExistingTask,
+    //         'score' => 30,
+    //     ]);
 
-        return $newBid;
+    //     return $newBid;
 
-        // $topScore = Bid::where('issue_id', '=', $request->issue_id)->get()->max('score');
-        // $firstWinner = Bid::where('issue_id', '=', $request->issue_id)->
-        //                     where('score', $topScore)->
-        //                     first();
+    //     // $topScore = Bid::where('issue_id', '=', $request->issue_id)->get()->max('score');
+    //     // $firstWinner = Bid::where('issue_id', '=', $request->issue_id)->
+    //     //                     where('score', $topScore)->
+    //     //                     first();
 
-        // $current = Carbon::now();
+    //     // $current = Carbon::now();
 
-        // // return $firstWinner;
+    //     // // return $firstWinner;
 
-        // $prevWinner = Winner::where('bid_id', $firstWinner->id)->get();
-        // if(!isset($prevWinner))
-        // {
+    //     // $prevWinner = Winner::where('bid_id', $firstWinner->id)->get();
+    //     // if(!isset($prevWinner))
+    //     // {
             
-        //     $win = Winner::create([
-        //         'bid_id' => $firstWinner->id,
-        //         'extensionCount' => 1,
-        //         'position' => 1,
-        //         'endingAt' => $current->addHour($firstWinner->timeToFix)
-        //         ]);
-        //         return $win;
+    //     //     $win = Winner::create([
+    //     //         'bid_id' => $firstWinner->id,
+    //     //         'extensionCount' => 1,
+    //     //         'position' => 1,
+    //     //         'endingAt' => $current->addHour($firstWinner->timeToFix)
+    //     //         ]);
+    //     //         return $win;
             
 
-        // }
-        // return $prevWinner;
+    //     // }
+    //     // return $prevWinner;
         
         
         
         
         
-        // if(!isset($prevWinner)){
-        //     $win = Winner::create([
-        //         'bid_id' => $firstWinner->id,
-        //         'extensionCount' => 1,
-        //         'position' => 1,
-        //         'endingAt' => $current->addHour($firstWinner->timeToFix)
-        //     ]);
-        //     return $win;
-        // }
-        // else{
-        //     $prevWinner->bid_id = $firstWinner->id;
-        //     $prevWinner->endingAt = $current->addHour($firstWinner->timeToFix);
-        //     $prevWinner->update();
-        // }
-        // return $prevWinner;
+    //     // if(!isset($prevWinner)){
+    //     //     $win = Winner::create([
+    //     //         'bid_id' => $firstWinner->id,
+    //     //         'extensionCount' => 1,
+    //     //         'position' => 1,
+    //     //         'endingAt' => $current->addHour($firstWinner->timeToFix)
+    //     //     ]);
+    //     //     return $win;
+    //     // }
+    //     // else{
+    //     //     $prevWinner->bid_id = $firstWinner->id;
+    //     //     $prevWinner->endingAt = $current->addHour($firstWinner->timeToFix);
+    //     //     $prevWinner->update();
+    //     // }
+    //     // return $prevWinner;
 
         
-        // $response = [
-        //     'user' => $user,
-        //     'token' => $token
-        // ];
-    }
+    //     // $response = [
+    //     //     'user' => $user,
+    //     //     'token' => $token
+    //     // ];
+    // }
+    return "hello world";
 }
