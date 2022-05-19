@@ -73,6 +73,7 @@ class IssueController extends Controller
     }
 
     public function myUpload($id){
-        return $id;
+        $myUploads = Issue::where('user_id', $id)->get();
+        return $myUploads;
     }
 }
