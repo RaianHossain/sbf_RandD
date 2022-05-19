@@ -52,10 +52,10 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     
     
     //bids route
-    // Route::resource('bids', BidController::class);
+    Route::resource('bids', BidController::class);
 
     //winners route
-    // Route::resource('winners', WinnerController::class);
+    Route::resource('winners', WinnerController::class);
 
     Route::get('/resolving-now/{user_id}', [WinnerController::class, 'myResolve'])->name('winners.resolvingNow');
 });
