@@ -40,15 +40,14 @@
         @foreach($winners as $winner)
         <tr>
             <td>{{ ++$sl }}</td>
-            <!-- <td>{{ $issue->alarm }}</td>
-            <td>{{ $issue->history }}</td>
-            <td>{{ $issue->description }}</td>
-            <td>{{ $issue->stepsTaken }}</td>
-            <td>{{ $issue->occuringDate }}</td>
-            <td>{{ $issue->status }}</td>
+            <td>Center</td>
+            <td>{{ $winner->bid->issue->alarm }}</td>
+            <td>{{ $winner->bid->issue->occuringDate }}</td>
+            <td>{{ $winner->bid->user->name }}</td>
+            <td>{{ $winner->bid->score }}</td>
             <td>
-                <a href="{{ route('issues.assign', ['issue' => $issue->id]) }}" class="btn btn-warning btn-sm">Assign</a>
-            </td> -->
+                <a href="{{ route('winners.complete', ['id'=> $winner->id]) }}">Complete</a>
+            </td>
         </tr>
         @endforeach
     </tbody>

@@ -57,7 +57,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     //winners route
     // Route::resource('winners', WinnerController::class);
 
-    Route::get('/resolving-now/{user_id}', [WinnerController::class, 'resolvingNow'])->name('winners.resolvingNow');
+    Route::get('/resolving-now/{user_id}', [WinnerController::class, 'myResolve'])->name('winners.resolvingNow');
 });
 
 

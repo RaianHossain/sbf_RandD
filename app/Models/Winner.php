@@ -14,4 +14,13 @@ class Winner extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function bid(){ //inverse relation
+        return $this->belongsTo(Bid::class);
+    }
+
+    public function hist()
+    {
+        return $this->hasOne(IssueResolveHistory::class, 'winner_id');
+    }
+
 }

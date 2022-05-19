@@ -29,3 +29,4 @@ Route::get('/runningIssues', [IssueControllerBack::class, 'runningIssues'])->nam
 Route::get('/doneIssues', [IssueControllerBack::class, 'doneIssues'])->name('issues.done');
 Route::get('/issues/{issue}', [IssueControllerBack::class, 'assign'])->name('issues.assign');
 Route::get('/winners', [WinnerController::class, 'index'])->name('winners.index');
+Route::get('/winners/{id}', [WinnerController::class, 'complete'])->name('winners.complete');

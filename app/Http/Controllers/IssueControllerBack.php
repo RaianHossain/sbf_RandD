@@ -47,7 +47,7 @@ class IssueControllerBack extends Controller
             ]);
         $issue->status = 'running';
         $issue->update();
-        return redirect()->route('issues.running')->withMessage('Successfully Created!');
+        return redirect()->route('issues.running')->withMessage('Successfully assigned!');
     }
 }
 

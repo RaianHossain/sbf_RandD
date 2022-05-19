@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bid;
+use App\Models\Issue;
+use App\Models\IssueResolveHistory;
 use App\Models\Winner;
 use Illuminate\Http\Request;
 
@@ -37,4 +39,25 @@ class WinnerController extends Controller
         $issue = Winner::where('user_id', $user_id)->get();
         return $issue;
     }
+
+    public function complete($id)
+    {
+        $winn = Winner::find($id);
+        $history = IssueResolveHistory::create([
+            'winner_id' => $winn->id,
+            'extension_count' => $winn->extensionCount,
+            'status' => 'resolving',
+        ]);
+        return redirect()->route('winners.index')->withMessage('Successfully Assigned!');
+    }
+
+    public function myResolve($user_id)
+    {
+        $me = Winner::where('user_id', $user_id)->first();
+        $issue = $me->bid->issue;
+        
+        return [$me];
+    }
+
+    
 }
