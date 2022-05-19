@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\IssueController;
 use App\Http\Controllers\IssueControllerBack;
+use App\Http\Controllers\WinnerController;
 use App\Models\Issue;
 use Illuminate\Support\Facades\Route;
 
