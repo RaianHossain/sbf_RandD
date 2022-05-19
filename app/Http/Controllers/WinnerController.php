@@ -11,7 +11,7 @@ class WinnerController extends Controller
     public function index()
     {
         $winners = Winner::latest()->get();
-        return $winners;
+        return view('backend.winners.index', ['winners' => $winners]);
     }
 
     // public function store(Request $request)

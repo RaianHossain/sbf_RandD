@@ -27,3 +27,4 @@ Route::get('/pendingIssues', [IssueControllerBack::class, 'pendingIssues'])->nam
 Route::get('/runningIssues', [IssueControllerBack::class, 'runningIssues'])->name('issues.running');
 Route::get('/doneIssues', [IssueControllerBack::class, 'doneIssues'])->name('issues.done');
 Route::get('/issues/{issue}', [IssueControllerBack::class, 'assign'])->name('issues.assign');
+Route::get('/winners', [WinnerController::class, 'index'])->name('winners.index');
