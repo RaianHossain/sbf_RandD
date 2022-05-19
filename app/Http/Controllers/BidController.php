@@ -98,6 +98,7 @@ class BidController extends Controller
     //     //     'user' => $user,
     //     //     'token' => $token
     //     // ];
-    // }
-    return "hello world";
+    return "hello";
+    
+    }
 }

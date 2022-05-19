@@ -52,6 +52,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     
     
     //bids route
+    Route::get('/bid', [BidController::class, 'baldhona']);
     Route::resource('bids', BidController::class);
 
     //winners route
