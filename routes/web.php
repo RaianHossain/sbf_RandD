@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BidController;
 use App\Http\Controllers\IssueController;
 use App\Http\Controllers\IssueControllerBack;
 use App\Http\Controllers\WinnerController;
@@ -30,3 +31,4 @@ Route::get('/doneIssues', [IssueControllerBack::class, 'doneIssues'])->name('iss
 Route::get('/issues/{issue}', [IssueControllerBack::class, 'assign'])->name('issues.assign');
 Route::get('/winners', [WinnerController::class, 'index'])->name('winners.index');
 Route::get('/winners/{id}', [WinnerController::class, 'complete'])->name('winners.complete');
+// Route::resource('bids', BidController::class);

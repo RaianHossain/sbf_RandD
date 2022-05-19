@@ -11,6 +11,7 @@ use function PHPUnit\Framework\isEmpty;
 
 class BidController extends Controller
 {
+    
     public function index()
     {
         $bids = Bid::latest()->get();
@@ -19,16 +20,16 @@ class BidController extends Controller
 
     public function store(Request $request)
     {
-        // $request->validate([
-        //     'issue_id'=> 'required',
-        //     'user_id'=> 'required',
-        //     'timeToFix'=> 'required|numeric',
-        //     'sendBackDate' => 'required',
-        //     'needSupport'=> 'required',
-        //     'needSpare'=> 'required',
-        //     'possibleCost'=> 'required',
-        //     'haveExistingTask'=> 'required'
-        // ]);
+        $request->validate([
+            'issue_id'=> 'required',
+            'user_id'=> 'required',
+            'timeToFix'=> 'required|numeric',
+            'sendBackDate' => 'required',
+            'needSupport'=> 'required',
+            'needSpare'=> 'required',
+            'possibleCost'=> 'required',
+            'haveExistingTask'=> 'required'
+        ]);
 
         // $firstWinner = Bid::where('issue_id', '=', $request->issue_id)->get()->max('score');
         // return $firstWinner;
@@ -47,6 +48,7 @@ class BidController extends Controller
         ]);
 
         return $newBid;
+        // return redirect()->route('issues.running')->withMessage('Successfully!');
 
         // $topScore = Bid::where('issue_id', '=', $request->issue_id)->get()->max('score');
         // $firstWinner = Bid::where('issue_id', '=', $request->issue_id)->
