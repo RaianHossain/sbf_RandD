@@ -75,7 +75,7 @@ class WinnerController extends Controller
         ]);
         $user = User::where('id', $user_id)->first();
         $user->update([
-            'score' => 100,
+            'score' => "100",
         ]);
 
         
