@@ -62,7 +62,7 @@ class WinnerController extends Controller
 
     public function complt(Request $request, $winner_id, $user_id)
     {
-        $comWinner = Winner::where('user_id', '=', $winner_id )->first();
+        $comWinner = Winner::where('winner_id', '=', $winner_id )->first();
         $hisForDelete = IssueResolveHistory::all();
         // foreach ($hisForDelete as $his) {
         //     $his->delete();
