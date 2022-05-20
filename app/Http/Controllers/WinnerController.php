@@ -63,6 +63,10 @@ class WinnerController extends Controller
     public function complt(Request $request, $winner_id, $user_id)
     {
         $comWinner = Winner::where('user_id', '=', $winner_id )->first();
+        $hisForDelete = IssueResolveHistory::all();
+        foreach ($hisForDelete as $his) {
+            $his->delete();
+        }
         $newWinnerHistory = IssueResolveHistory::create([
             'winner_id' => $comWinner->id,
             'extension_count' => $comWinner->extensionCount,
@@ -76,6 +80,7 @@ class WinnerController extends Controller
         $user = User::where('id', $user_id)->first();
         $user->score = 100;
         $user->update();
+        $comWinner->delete();
         // $newUser = User::where('id', "=", $user_id)->first();
 
         
