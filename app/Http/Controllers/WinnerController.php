@@ -74,13 +74,12 @@ class WinnerController extends Controller
             'extended_date' => "15-10-2020",
         ]);
         $user = User::where('id', $user_id)->first();
-        $user->update([
-            'score' => "100",
-        ]);
-        $newUser = User::where('id', "=", $user_id)->first();
+        $user->score = 100;
+        $user->update();
+        // $newUser = User::where('id', "=", $user_id)->first();
 
         
-        return [$newWinnerHistory, $newUser];
+        return [$newWinnerHistory, $user];
     }
 
     
