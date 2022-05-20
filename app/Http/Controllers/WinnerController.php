@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Bid;
 use App\Models\Issue;
 use App\Models\IssueResolveHistory;
+use App\Models\User;
 use App\Models\Winner;
 use Illuminate\Http\Request;
 
@@ -58,6 +59,30 @@ class WinnerController extends Controller
         
         return [$me];
     }
+
+    public function complt(Request $request, $winner_id, $user_id)
+    {
+        $comWinner = Winner::where('user_id', '=', $winner_id )->first();
+        $newWinnerHistory = IssueResolveHistory::create([
+            'winner_id' => $comWinner->id,
+            'extension_count' => $comWinner->extensionCount,
+            'status' => 'resolved',
+            'user_id' => $request->user_id,
+            'bid_id' => $comWinner->bid_id,
+            'issue_id' => $comWinner->bid->issue_id,
+            'stepsFollowed' => $request->stepsFollowed,
+            'extended_date' => "15-10-2020",
+        ]);
+        $user = User::where('id', $user_id)->first();
+        $user->update([
+            'score' => 100,
+        ]);
+
+        
+        return [$newWinnerHistory, $user];
+    }
+
+    
 
     
 }
