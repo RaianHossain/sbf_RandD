@@ -77,9 +77,10 @@ class WinnerController extends Controller
         $user->update([
             'score' => "100",
         ]);
+        $newUser = User::where('id', "=", $user_id)->first();
 
         
-        return [$newWinnerHistory, $user];
+        return [$newWinnerHistory, $newUser];
     }
 
     
