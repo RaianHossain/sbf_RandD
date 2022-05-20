@@ -20,7 +20,7 @@ class BidController extends Controller
 
     public function store(Request $request)
     {
-        return $request;
+        // return $request;
         $request->validate([
             'issue_id'=> 'required',
             'user_id'=> 'required',
@@ -39,11 +39,11 @@ class BidController extends Controller
         $newBid =  Bid::create([
             'issue_id' => $request->issue_id,
             'user_id' => $request->user_id,
-            'timeToFix' => $request->timeToFix,
+            'timeToFix' => (int)$request->timeToFix,
             'sendBackDate' => $request->sendBackDate,
             'needSupport' => $request->needSupport,
             'needSpare' => $request->needSpare,
-            'possibleCost' => $request->possibleCost,
+            'possibleCost' => (int)$request->possibleCost,
             'haveExistingTask' => $request->haveExistingTask,
             'score' => 30,
         ]);
