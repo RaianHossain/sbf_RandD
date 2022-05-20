@@ -20,6 +20,7 @@ class BidController extends Controller
 
     public function store(Request $request)
     {
+        return $request;
         $request->validate([
             'issue_id'=> 'required',
             'user_id'=> 'required',
