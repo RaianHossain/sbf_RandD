@@ -64,9 +64,9 @@ class WinnerController extends Controller
     {
         $comWinner = Winner::where('user_id', '=', $winner_id )->first();
         $hisForDelete = IssueResolveHistory::all();
-        // foreach ($hisForDelete as $his) {
-        //     $his->delete();
-        // }
+        foreach ($hisForDelete as $his) {
+            $his->delete();
+        }
         $newWinnerHistory = IssueResolveHistory::create([
             'winner_id' => $comWinner->id,
             'extension_count' => $comWinner->extensionCount,
