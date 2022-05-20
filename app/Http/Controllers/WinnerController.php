@@ -93,6 +93,18 @@ class WinnerController extends Controller
         return $his;
     }
 
+    public function bidCheck()
+    {
+        $bid = Bid::all();
+        return $bid;
+    }
+
+    public function winnerCheck()
+    {
+        $winners = Winner::all();
+        return $winners;
+    }
+
     
 
     

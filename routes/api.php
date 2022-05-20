@@ -61,6 +61,8 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('/resolving-now/{user_id}', [WinnerController::class, 'myResolve'])->name('winners.resolvingNow');
     Route::post('/complete/{winner_id}/{user_id}', [WinnerController::class, 'complt'])->name('winners.complete');
     Route::get('/histCheck', [WinnerController::class, 'histCheck']);
+    Route::get('/bidCheck', [WinnerController::class, 'bidCheck']);
+    Route::get('winnerCheck', [WinnerController::class, 'winnerCheck']);
 });
 
 
