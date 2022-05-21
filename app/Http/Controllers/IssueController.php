@@ -21,7 +21,8 @@ class IssueController extends Controller
             'description'=> 'required',
             'stepsTaken'=> 'required',
             'status' => 'required',
-            'occuringDate'=> 'required'
+            'occuringDate'=> 'required',
+            'center' => 'required',
         ]);
 
         return Issue::create([
@@ -29,8 +30,9 @@ class IssueController extends Controller
             'history' => $request->history,
             'description' => $request->description,
             'stepsTaken' => $request->stepsTaken,
-            'status' => $request->status,
-            'occuringDate' => $request->occuringDate
+            'status' => "pending",
+            'occuringDate' => $request->occuringDate,
+            'center' => $request->center,
         ]);
 
         // return Issue::create([
