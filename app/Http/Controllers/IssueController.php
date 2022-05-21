@@ -20,7 +20,6 @@ class IssueController extends Controller
             'history'=> 'required',
             'description'=> 'required',
             'stepsTaken'=> 'required',
-            'status' => 'required',
             'occuringDate'=> 'required',
             'center' => 'required',
         ]);
@@ -29,6 +28,7 @@ class IssueController extends Controller
             'alarm' => $request->alarm,
             'history' => $request->history,
             'description' => $request->description,
+            'status' => "pending",
             'stepsTaken' => $request->stepsTaken,
             'occuringDate' => $request->occuringDate,
             'center' => $request->center,
