@@ -70,7 +70,7 @@ class WinnerController extends Controller
         $newWinnerHistory = IssueResolveHistory::create([
             'winner_id' => $comWinner->id,
             'extension_count' => $comWinner->extensionCount,
-            'status' => 'resolved',
+            'status' => 'done',
             'user_id' => $request->user_id,
             'bid_id' => $comWinner->bid_id,
             'issue_id' => $comWinner->bid->issue_id,
