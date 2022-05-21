@@ -30,7 +30,6 @@ class IssueController extends Controller
             'history' => $request->history,
             'description' => $request->description,
             'stepsTaken' => $request->stepsTaken,
-            'status' => "pending",
             'occuringDate' => $request->occuringDate,
             'center' => $request->center,
         ]);
