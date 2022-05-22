@@ -81,6 +81,9 @@ class WinnerController extends Controller
         $user->score = 100;
         $user->update();
         $comWinner->delete();
+        $issueSolved = Issue::where('id', $newWinnerHistory->issue_id)->first();
+        $issueSolved->status = 'done';
+        $issueSolved->update();
         // $newUser = User::where('id', "=", $user_id)->first();
 
         
