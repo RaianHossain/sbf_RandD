@@ -50,6 +50,7 @@
             <td>{{ $issue->status }}</td>
             <td>
                 <a href="{{ route('issues.assign', ['issue' => $issue->id]) }}" class="btn btn-warning btn-sm">Assign</a>
+                <a href="{{ route('bids.showing', ['issue_id' => $issue->id]) }}" class="btn btn-info">Show Bids</a>
             </td>
         </tr>
         @endforeach

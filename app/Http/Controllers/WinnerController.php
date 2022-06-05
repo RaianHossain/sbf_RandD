@@ -108,6 +108,12 @@ class WinnerController extends Controller
         return $winners;
     }
 
+    public function userCheck()
+    {
+        $users = User::all();
+        return $users;
+    }
+
     
 
     

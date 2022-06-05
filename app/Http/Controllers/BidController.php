@@ -35,6 +35,12 @@ class BidController extends Controller
         // $firstWinner = Bid::where('issue_id', '=', $request->issue_id)->get()->max('score');
         // return $firstWinner;
         // dd("hello");
+        $allBids = Bid::where('issue_id', '=', $request->issue_id)->get();
+        for($i = 0; $i < count($allBids); $i++){
+            if($allBids[$i]->user_id == $request->user_id){
+                return response()->json(['error' => 'You have already bid on this issue']);
+            }
+        }
 
         $newBid =  Bid::create([
             'issue_id' => $request->issue_id,
@@ -45,7 +51,7 @@ class BidController extends Controller
             'needSpare' => $request->needSpare,
             'possibleCost' => (int)$request->possibleCost,
             'haveExistingTask' => $request->haveExistingTask,
-            'score' => 30,
+            'score' => 50,
         ]);
 
         return $newBid;
@@ -103,5 +109,12 @@ class BidController extends Controller
         // ];
     // return "hello";
     
+    }
+
+    public function showBids($issue_id)
+    {
+        $bids = Bid::where('issue_id', $issue_id)->get();
+        $bidWinner = Bid::orderBy('score', 'desc')->where('issue_id', $issue_id)->first();
+        return view('backend.bids.issue_wise_bids', ['bids' => $bids, 'bidWinner' => $bidWinner]);
     }
 }

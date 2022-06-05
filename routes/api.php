@@ -63,6 +63,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('/histCheck', [WinnerController::class, 'histCheck']);
     Route::get('/bidCheck', [WinnerController::class, 'bidCheck']);
     Route::get('winnerCheck', [WinnerController::class, 'winnerCheck']);
+    Route::get('userCheck', [WinnerController::class, 'userCheck']);
 });
 
 

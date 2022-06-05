@@ -32,3 +32,4 @@ Route::get('/issues/{issue}', [IssueControllerBack::class, 'assign'])->name('iss
 Route::get('/winners', [WinnerController::class, 'index'])->name('winners.index');
 // Route::get('/winners/{id}', [WinnerController::class, 'complete'])->name('winners.complete');
 // Route::resource('bids', BidController::class);
+Route::get('/bids/{issue_id}', [BidController::class, 'showBids'])->name('bids.showing');
